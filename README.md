@@ -6,7 +6,5 @@
     - easygui
     - checksumdir
 
-3.- El archivo hashFile.exe es un ejecutable del software para windows.
-
 
 
