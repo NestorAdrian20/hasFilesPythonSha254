@@ -21,8 +21,8 @@ class GeneradorHash(tk.Tk):
         # Frame de botones
         frame_botones = tk.Frame(self, relief=tk.RAISED, bd=2)
     
-        boton_hash_documento = Button(frame_botones, text='Hash Documento...', command=self._hash_documento)
-        boton_hash_directorio = Button(frame_botones, text='Hash Directorio...', command=self._hash_directorio)
+        boton_hash_documento = Button(frame_botones, text='Hash Documento: ', command=self._hash_documento)
+        boton_hash_directorio = Button(frame_botones, text='Hash Directorio: ', command=self._hash_directorio)
 
         
         boton_hash_documento.grid(row=0, column=0, sticky='we', padx=5, pady=5)
@@ -39,8 +39,8 @@ class GeneradorHash(tk.Tk):
         menu_opciones = tk.Menu(menu_app, tearoff=False)
         menu_app.add_cascade(label='Opciones', menu=menu_opciones)
         # Opciones de archivo
-        menu_opciones.add_command(label='Hash documento..', command=self._hash_documento)
-        menu_opciones.add_command(label='Has directorio..', command=self._hash_directorio)
+        menu_opciones.add_command(label='Hash documento;', command=self._hash_documento)
+        menu_opciones.add_command(label='Has directorio;', command=self._hash_directorio)
         menu_opciones.add_separator()
         menu_opciones.add_command(label='Salir', command=self.quit)
     
@@ -64,7 +64,7 @@ class GeneradorHash(tk.Tk):
         directory  = askdirectory()
         md5hash    = dirhash(directory, 'sha256')
 
-        etiqueta01 = Label(generador_hash, text="El directorio tiene el siguiente valor hash:")  
+        etiqueta01 = Label(generador_hash, text="El directorio tiene el siguiente valor hash-")  
         etiqueta01.place(x=270, y=270) 
         etiqueta = Label(generador_hash, text=md5hash)  
         etiqueta.place(x=200, y=300) 
